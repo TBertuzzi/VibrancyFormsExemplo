@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vf="clr-namespace:Vibrancy.Forms;assembly=Vibrancy.Forms"
+			 xmlns:helper="clr-namespace:VibrancyFormsExemplo.Helpers"
+             Padding="0,60,0,0"
+             x:Class="VibrancyFormsExemplo.MainPage">
+
+    <Grid RowDefinitions="*, *">
+		<ScrollView
+			Grid.Row="0"
+			Grid.RowSpan="2">
+			<StackLayout>
+				<Image
+					Source="{helper:ImageResourceExtension VibrancyFormsExemplo.Resources.anthem.jpg}"
+					Aspect="AspectFill">
+				</Image>
+				<Image
+					Source="{helper:ImageResourceExtension VibrancyFormsExemplo.Resources.conan.jpg}"
+					Aspect="AspectFill">
+				</Image>
+				<Image
+					Source="{helper:ImageResourceExtension VibrancyFormsExemplo.Resources.finalFantasy14.jpg}"
+					Aspect="AspectFill">
+				</Image>
+				<Image
+					Source="{helper:ImageResourceExtension VibrancyFormsExemplo.Resources.NoMansSkyBeyond.jpg}"
+					Aspect="AspectFill">
+				</Image>
+				<Image
+					Source="{helper:ImageResourceExtension VibrancyFormsExemplo.Resources.pokemonShield.jpeg}"
+					Aspect="AspectFill">
+				</Image>
+			</StackLayout>
+		</ScrollView>
+		<vf:BlurView
+			x:Name="vib"
+			BlurStyle="Regular"
+			EnableVibrancy="False"
+			Grid.Row="1">
+			<StackLayout>
+				<Label
+					Text="Vibrancy.Forms"
+					FontSize="Title"
+					HorizontalOptions="Center"
+					VerticalOptions="FillAndExpand"
+					VerticalTextAlignment="End" />
+				<Label
+					Text="Aqui o Efeito de Blur esta aplicado"
+					FontSize="Large"
+					VerticalOptions="FillAndExpand"
+					HorizontalOptions="Center"
+					VerticalTextAlignment="Start" />
+				<StackLayout
+					HorizontalOptions="Center"
+					Padding="0, 0, 0, 44"
+					Orientation="Horizontal">
+					<Label
+						Text="Habilitar vibrancy"
+						VerticalOptions="Center" />
+					<Switch
+						HorizontalOptions="Center"
+						IsToggled="{Binding Source={x:Reference vib}, Path=EnableVibrancy}" />
+				</StackLayout>
+			</StackLayout>
+		</vf:BlurView>
+	</Grid>
+
+ 
+</ContentPage>
